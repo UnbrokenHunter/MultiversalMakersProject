@@ -47,5 +47,10 @@ namespace ProjectBeelzebub
             scene.allowSceneActivation = false;
 		}
 
+        public void LoadNextScene()
+        {
+            SceneManager.LoadScene(Mathf.Clamp(SceneManager.GetActiveScene().buildIndex + 1, 0, SceneManager.sceneCount - 1));
+        }
+
     }
 }
