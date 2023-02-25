@@ -14976,34 +14976,27 @@ MonoBehaviour:
   _moveParticles: {fileID: 3836054527605825648}
   _tiltChangeSpeed: 0.05
   _maxTiltAngle: 45
-  _footstepClips:
-  - {fileID: 8300000, guid: 2113f34717365ed4d9616fe3402bd43c, type: 3}
-  - {fileID: 8300000, guid: 3db7790641583ba4ca4fc1fe33ed2fb3, type: 3}
+  _footstepClips: Footstep 1
   _wallHitAnimTime: 0.2
   _wallSlideParticles: {fileID: 811523411}
-  _wallSlideSource: {fileID: 1522074418}
-  _wallClimbClips:
-  - {fileID: 8300000, guid: be5f0f8c427cac44e8387eef0a889fa5, type: 3}
-  - {fileID: 8300000, guid: 3f6ea2c296043f0439d1508b8f7605e1, type: 3}
+  _wallClimbClips: Wall Climb 1
   _maxWallSlideVolume: 0.2
   _wallSlideVolumeSpeed: 0.6
   _wallSlideParticleOffset: 0.3
-  _ladderClips:
-  - {fileID: 8300000, guid: 4c990be3367ff04498b7cb54e948e244, type: 3}
-  - {fileID: 8300000, guid: a3d5971d8fe70fe4dad7904bbf632dfb, type: 3}
+  _ladderClips: Ladder Climb 1
   _minImpactForce: 20
   _maxImpactForce: 40
   _landAnimDuration: 0.1
-  _landClip: {fileID: 8300000, guid: f2433d011280e17498820544628ee930, type: 3}
-  _jumpClip: {fileID: 8300000, guid: 101dc2feac7449645b4a53d89f9541f9, type: 3}
-  _doubleJumpClip: {fileID: 8300000, guid: 0d11fd7368b306b4c900241e3dadf28f, type: 3}
+  _landClip: Landing
+  _jumpClip: Jump
+  _doubleJumpClip: Double Jump
   _jumpParticles: {fileID: 3836054527589566771}
   _launchParticles: {fileID: 3836054527797046534}
   _doubleJumpParticles: {fileID: 3836054526829672068}
   _landParticles: {fileID: 3836054527146565397}
   _jumpParticlesParent: {fileID: 3266588521816464805}
   _attackAnimTime: 0.2
-  _attackClip: {fileID: 8300000, guid: b8093fb3a7eb8f74a878bb9da5af0a7a, type: 3}
+  _attackClip: Attack
 --- !u!212 &3836054527376998748
 SpriteRenderer:
   m_ObjectHideFlags: 0

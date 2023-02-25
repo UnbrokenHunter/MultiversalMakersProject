@@ -1,3 +1,4 @@
+using DarkTonic.MasterAudio;
 using UnityEngine;
 
 namespace MultiversalMakers {
@@ -6,13 +7,11 @@ namespace MultiversalMakers {
         private IPlayerController _player;
         private Animator _anim;
         private SpriteRenderer _renderer;
-        private AudioSource _source;
 
         private void Awake() {
             _player = GetComponentInParent<IPlayerController>();
             _anim = GetComponent<Animator>();
             _renderer = GetComponent<SpriteRenderer>();
-            _source = GetComponent<AudioSource>();
         }
 
         private void Start() {
@@ -42,7 +41,7 @@ namespace MultiversalMakers {
         [SerializeField] private ParticleSystem _moveParticles;
         [SerializeField] private float _tiltChangeSpeed = .05f;
         [SerializeField] private float _maxTiltAngle = 45;
-        [SerializeField] private AudioClip[] _footstepClips;
+        [SerializeField] private string _footstepClips;
 
         private ParticleSystem.MinMaxGradient _currentGradient = new(Color.white, Color.white);
         private Vector2 _tiltVelocity;
@@ -62,7 +61,7 @@ namespace MultiversalMakers {
         // Called from AnimationEvent
         public void PlayFootstepSound() {
             _stepIndex = (_stepIndex + 1) % _footstepClips.Length;
-            PlaySound(_footstepClips[_stepIndex], 0.01f);
+            MasterAudio.PlaySound(_footstepClips);
         }
 
         #endregion
@@ -72,8 +71,7 @@ namespace MultiversalMakers {
         [Header("WALL")] 
         [SerializeField] private float _wallHitAnimTime = 0.167f;
         [SerializeField] private ParticleSystem _wallSlideParticles;
-        [SerializeField] private AudioSource _wallSlideSource;
-        [SerializeField] private AudioClip[] _wallClimbClips;
+        [SerializeField] private string _wallClimbClips;
         [SerializeField] private float _maxWallSlideVolume = 0.2f;
         [SerializeField] private float _wallSlideVolumeSpeed = 0.6f;
         [SerializeField] private float _wallSlideParticleOffset = 0.3f;
@@ -100,9 +98,6 @@ namespace MultiversalMakers {
             SetParticleColor(new Vector2(_player.WallDirection, 0), _wallSlideParticles);
             _wallSlideParticles.transform.localPosition = new Vector3(_wallSlideParticleOffset * _player.WallDirection, 0, 0);
 
-            _wallSlideSource.volume = _isSliding || _player.ClimbingLadder && _player.Speed.y < 0
-                ? Mathf.MoveTowards(_wallSlideSource.volume, _maxWallSlideVolume, _wallSlideVolumeSpeed * Time.deltaTime)
-                : 0;
         }
 
         private int _wallClimbIndex = 0;
@@ -110,7 +105,7 @@ namespace MultiversalMakers {
         // Called from AnimationEvent
         public void PlayWallClimbSound() {
             _wallClimbIndex = (_wallClimbIndex + 1) % _wallClimbClips.Length;
-            PlaySound(_wallClimbClips[_wallClimbIndex], 0.1f);
+            MasterAudio.PlaySound(_wallClimbClips);
         }
 
         #endregion
@@ -118,14 +113,14 @@ namespace MultiversalMakers {
         #region Ladders
 
         [Header("LADDER")]
-        [SerializeField] private AudioClip[] _ladderClips;
+        [SerializeField] private string _ladderClips;
         private int _climbIndex = 0;
 
         // Called from AnimationEvent
         public void PlayLadderClimbSound() {
             if (_player.Speed.y < 0) return;
             _climbIndex = (_climbIndex + 1) % _ladderClips.Length;
-            PlaySound(_ladderClips[_climbIndex], 0.07f);
+            MasterAudio.PlaySound(_ladderClips);
         }
 
         #endregion
@@ -136,7 +131,7 @@ namespace MultiversalMakers {
         [SerializeField] private float _minImpactForce = 20;
         [SerializeField] private float _maxImpactForce = 40;
         [SerializeField] private float _landAnimDuration = 0.1f;
-        [SerializeField] private AudioClip _landClip, _jumpClip, _doubleJumpClip;
+        [SerializeField] private string _landClip, _jumpClip, _doubleJumpClip;
         [SerializeField] private ParticleSystem _jumpParticles, _launchParticles, _doubleJumpParticles, _landParticles;
         [SerializeField] private Transform _jumpParticlesParent;
 
@@ -149,7 +144,7 @@ namespace MultiversalMakers {
             
             _jumpTriggered = true;
             _wallJumped = wallJumped;
-            PlaySound(_jumpClip, 0.05f, Random.Range(0.98f, 1.02f));
+            MasterAudio.PlaySound(_jumpClip);
 
             _jumpParticlesParent.localRotation = Quaternion.Euler(0, 0, _player.WallDirection * 60f);
 
@@ -161,7 +156,7 @@ namespace MultiversalMakers {
         private void OnAirJumped() {
             _jumpTriggered = true;
             _wallJumped = false;
-            PlaySound(_doubleJumpClip, 0.1f);
+            MasterAudio.PlaySound(_doubleJumpClip);
             _doubleJumpParticles.Play();
         }
 
@@ -174,7 +169,7 @@ namespace MultiversalMakers {
                 _landParticles.transform.localScale = p * Vector3.one;
                 _landParticles.Play();
                 SetColor(_landParticles);
-                PlaySound(_landClip, p * 0.1f);
+                MasterAudio.PlaySound(_landClip);
             }
 
             if (_grounded) _moveParticles.Play();
@@ -187,13 +182,13 @@ namespace MultiversalMakers {
 
         [Header("ATTACK")] 
         [SerializeField] private float _attackAnimTime = 0.25f;
-        [SerializeField] private AudioClip _attackClip;
+        [SerializeField] private string _attackClip;
         private bool _attacked;
 
         private void OnAttacked() => _attacked = true;
 
         // Called from AnimationEvent
-        public void PlayAttackSound() => PlaySound(_attackClip, 0.1f, Random.Range(0.97f, 1.03f));
+        public void PlayAttackSound() => MasterAudio.PlaySound(_attackClip);
 
         #endregion
 
@@ -298,13 +293,5 @@ namespace MultiversalMakers {
 
         #endregion
 
-        #region Audio
-
-        private void PlaySound(AudioClip clip, float volume = 1, float pitch = 1) {
-            _source.pitch = pitch;
-            _source.PlayOneShot(clip, volume);
-        }
-
-        #endregion
     }
 }
