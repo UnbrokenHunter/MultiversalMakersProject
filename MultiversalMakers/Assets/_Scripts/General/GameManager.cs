@@ -1,8 +1,7 @@
 using Sirenix.OdinInspector;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace MultiversalMakers
 {
@@ -18,6 +17,8 @@ namespace MultiversalMakers
 
             else
                 Destroy(gameObject);
+
+            _input = GetComponent<PlayerInput>();
         }
 
         public static GameManager Instance;
@@ -27,29 +28,38 @@ namespace MultiversalMakers
         #region Game State
 
         public GameStates CurrentGameState { get => currentGameState; }
-        private GameStates currentGameState;
+        private GameStates currentGameState = GameStates.Play;
 
 
         [Title("Game State")]
         [SerializeField] private UnityEvent playEvent;
         [SerializeField] private UnityEvent pausedEvent;
 
+        public void TogglePausedMenu()
+        {
+            SetGameState(
+                (currentGameState == GameStates.Play) ?
+                GameStates.Paused :
+                GameStates.Play);
 
-        public void SetGameStateToPlay() => SetGameState(GameStates.Play);
-
-        public void SetStateToPaused() => SetGameState(GameStates.Paused);
-
+        }
 
         private void SetGameState(GameStates state)
         {
             currentGameState = state;
 
             if (state == GameStates.Play)
+            {
                 playEvent?.Invoke();
+                Time.timeScale = 1f; // DO THIS BETTER
+            }
 
 
             if (state == GameStates.Paused)
+            {
                 pausedEvent?.Invoke();
+                Time.timeScale = 0f;
+            }
 
         }
 
@@ -61,7 +71,29 @@ namespace MultiversalMakers
 
         #endregion
 
+        #region Input
 
+        private PlayerInput _input;
+
+        private FrameInput _frameInput;
+
+        protected virtual void Update()
+        {
+            GatherInputs();
+        }
+
+        private void GatherInputs()
+        {
+            _frameInput = _input.FrameInput;
+
+            if(_frameInput.SettingsDown)
+            {
+                TogglePausedMenu();
+            }
+        }
+
+
+        #endregion
 
     }
 }

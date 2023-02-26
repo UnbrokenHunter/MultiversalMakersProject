@@ -81,6 +81,8 @@ namespace MultiversalMakers {
         protected virtual void GatherInput() {
             _frameInput = _input.FrameInput;
 
+            if (GameManager.Instance.CurrentGameState == GameManager.GameStates.Paused) return;
+
             if (_stats.SnapInput) {
                 _frameInput.Move.x = Mathf.Abs(_frameInput.Move.x) < _stats.HorizontalDeadzoneThreshold ? 0 : Mathf.Sign(_frameInput.Move.x);
                 _frameInput.Move.y = Mathf.Abs(_frameInput.Move.y) < _stats.VerticalDeadzoneThreshold ? 0 : Mathf.Sign(_frameInput.Move.y);
