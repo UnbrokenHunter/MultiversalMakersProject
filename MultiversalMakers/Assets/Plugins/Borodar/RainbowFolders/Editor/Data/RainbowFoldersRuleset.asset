@@ -17,7 +17,7 @@ MonoBehaviour:
     Key: Animations
     Ordinal: 0
     Priority: 0
-    IconType: 2010
+    IconType: 2510
     SmallIcon: {fileID: 0}
     LargeIcon: {fileID: 0}
     IsIconRecursive: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
     Key: Audio
     Ordinal: 1
     Priority: 0
-    IconType: 2020
+    IconType: 2520
     SmallIcon: {fileID: 0}
     LargeIcon: {fileID: 0}
     IsIconRecursive: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
     Key: Plugins
     Ordinal: 10
     Priority: 0
-    IconType: 2100
+    IconType: 2600
     SmallIcon: {fileID: 0}
     LargeIcon: {fileID: 0}
     IsIconRecursive: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
     Key: Scenes
     Ordinal: 15
     Priority: 0
-    IconType: 2150
+    IconType: 2650
     SmallIcon: {fileID: 0}
     LargeIcon: {fileID: 0}
     IsIconRecursive: 0
@@ -388,6 +388,30 @@ MonoBehaviour:
   - Type: 1
     Key: Assets/Settings
     Ordinal: 31
+    Priority: 0
+    IconType: 510
+    SmallIcon: {fileID: 0}
+    LargeIcon: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 0
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
+  - Type: 1
+    Key: Assets/Sprite Shaders Ultimate
+    Ordinal: 32
+    Priority: 0
+    IconType: 510
+    SmallIcon: {fileID: 0}
+    LargeIcon: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 0
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
+  - Type: 1
+    Key: Assets/TextMesh Pro
+    Ordinal: 33
     Priority: 0
     IconType: 510
     SmallIcon: {fileID: 0}
