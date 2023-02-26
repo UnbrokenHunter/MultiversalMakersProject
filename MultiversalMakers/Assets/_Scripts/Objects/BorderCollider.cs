@@ -20,7 +20,7 @@ namespace MultiversalMakers
         }
         private void OnTriggerExit2D(Collider2D collision)
         {
-            parent.CollisionExit(collision, transform);
+        //    parent.CollisionExit(collision, transform);
         }
     }
 }

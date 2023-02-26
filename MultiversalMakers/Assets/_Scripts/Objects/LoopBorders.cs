@@ -1,3 +1,5 @@
+using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,90 +8,93 @@ namespace MultiversalMakers
 {
     public class LoopBorders : MonoBehaviour
     {
-        public enum Direction { Horizontal, Vertical };
-        public Direction dir = Direction.Vertical;
+        [Title("Settings")]
+        [SerializeField] private Vector2 colliderOffset;
+        [SerializeField] private Vector2 teleportationOffset;
 
-        private Transform Border1, Border2;
-       
-        private float coord1, coord2;
+        private Transform playerTransform;
+        private Vector2[] cameraCorners;
 
         private void Awake()
         {
-            Border1 = transform.GetChild(0);
-            Border2 = transform.GetChild(1);
-            if (dir == Direction.Vertical)
-            {
-                coord1 = Border1.position.y;
-                coord2 = Border2.position.y;
-            }
-            else
-            {
-                coord1 = Border1.position.x;
-                coord2 = Border2.position.x;
-            }
+            // Set Borders
+            #region Borders
+            // Doing this for readability
+
+            // Get Camera corners
+            var dist = (transform.position - Camera.main.transform.position).z;
+
+            var leftBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, dist)).x - colliderOffset.x;
+            var rightBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, dist)).x + colliderOffset.x;
+
+            var downBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, dist)).y - colliderOffset.y;
+            var upBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, dist)).y + colliderOffset.y;
+            #endregion
+
+            // Save Camera Corners
+            cameraCorners = new[] {
+                new Vector2 (rightBorder, downBorder), //   1, -1
+                new Vector2 (leftBorder, downBorder),  //  -1, -1
+                new Vector2 (leftBorder, upBorder),    //  -1,  1
+                new Vector2 (rightBorder, upBorder)    //   1,  1
+            };
+
+            GetComponent<PolygonCollider2D>().points = cameraCorners;
         }
 
-        // Update is called once per frame
-        void Update()
+        private void OnTriggerExit2D(Collider2D collision)
         {
-        
+            if (!collision.CompareTag("Player")) return;
+
+            // Globally cache for convenience 
+            playerTransform = collision.transform;
+            Teleport(GetNewPosition());  
         }
 
-        public void CollisionExit(Collider2D collider, Transform border)
-        {
-            if (dir == Direction.Vertical)
-            {
-                if (border == Border1)
-                {
-                    float coordDif = coord1 - collider.transform.position.y;
-                    if (coordDif < 0) return;
-                    Vector3 newPos = new Vector3(collider.transform.position.x, coord2 + coordDif, collider.transform.position.z);
-                    teleport(collider.gameObject, newPos);
-                }
-                else if (border == Border2)
-                {
-                    float coordDif = coord2 - collider.transform.position.y;
-                    if (coordDif > 0) return;
-                    Vector3 newPos = new Vector3(collider.transform.position.x, coord1 + coordDif, collider.transform.position.z);
-                    teleport(collider.gameObject, newPos);
-                }
-            }
-            else
-            {
-                if (border == Border1)
-                {
-                    float coordDif = coord1 - collider.transform.position.x;
-                    if (coordDif < 0) return;
-                    Vector3 newPos = new Vector3(coord2 + coordDif, collider.transform.position.y, collider.transform.position.z);
-                    teleport(collider.gameObject, newPos);
-                }
-                else if (border == Border2)
-                {
-                    float coordDif = coord2 - collider.transform.position.x;
-                    if (coordDif > 0) return;
-                    Vector3 newPos = new Vector3(coord1 + coordDif, collider.transform.position.y, collider.transform.position.z);
-                    teleport(collider.gameObject, newPos);
-                }
-            }
+        private Vector3 GetNewPosition()
+        { 
+            #region Variables
+            // Doing this for readibility
+            float leftBorder = cameraCorners[1].x,
+                rightBorder = cameraCorners[0].x,
+                upBorder = cameraCorners[1].y,
+                downBorder = cameraCorners[2].y;
 
-            
+            bool _changeX = playerTransform.position.x < leftBorder || playerTransform.position.x > rightBorder,
+                _changeY = playerTransform.position.y < downBorder || playerTransform.position.y > upBorder;
+
+
+            float _newPlayerX = playerTransform.position.x,
+                _newPlayerY = playerTransform.position.y;
+            #endregion
+
+
+            if (_changeX)
+                _newPlayerX = (playerTransform.position.x > rightBorder ? leftBorder - teleportationOffset.x : rightBorder + teleportationOffset.x);
+
+
+            else if (_changeY)
+                _newPlayerY = (playerTransform.position.y > upBorder ? upBorder - teleportationOffset.y : downBorder + teleportationOffset.y);
+
+
+            // Return new position
+            return new Vector3 (_newPlayerX, _newPlayerY, 0);
         }
 
-        private void teleport(GameObject obj, Vector3 newPos)
+        private void Teleport(Vector3 _newPos)
         {
-            List<ParticleSystem> parts = new List<ParticleSystem>();
-            foreach (ParticleSystem ps in obj.GetComponentsInChildren<ParticleSystem>(false))
-            {
-                if (ps.isPlaying == true) 
-                {
-                    ps.Stop();
-                    parts.Add(ps);
-                    Debug.Log(ps.gameObject.name + " " + ps.isPlaying);
-                }
-            }
-            obj.transform.position = newPos;
-            foreach (TrailRenderer tr in obj.GetComponentsInChildren<TrailRenderer>(false)) tr.Clear();
-            foreach (ParticleSystem ps in parts) ps.Play();
+            // Foreach particle in the player gameobject, clear all particles
+            ParticleSystem[] particleSystems = playerTransform.gameObject.GetComponentsInChildren<ParticleSystem>();
+            Array.ForEach(particleSystems, particle => particle.Pause());
+
+            // Teleport player
+            playerTransform.position = _newPos;
+
+            // Clear the trail
+            playerTransform.GetComponentInChildren<TrailRenderer>().Clear();
+
+            // Play them all again
+            Array.ForEach(particleSystems, particle => particle.Play());
         }
 
     }
