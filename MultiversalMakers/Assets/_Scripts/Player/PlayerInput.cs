@@ -9,13 +9,14 @@ namespace MultiversalMakers {
         private void Update() => FrameInput = Gather();
 
         private PlayerInputActions _actions;
-        private InputAction _move, _jump, _attack;
+        private InputAction _move, _jump, _attack, _settings;
 
         private void Awake() {
             _actions = new PlayerInputActions();
             _move = _actions.Player.Move;
             _jump = _actions.Player.Jump;
             _attack = _actions.Player.Attack;
+            _settings = _actions.Player.Settings;
         }
 
         private void OnEnable() => _actions.Enable();
@@ -27,7 +28,8 @@ namespace MultiversalMakers {
                 JumpDown = _jump.WasPressedThisFrame(),
                 JumpHeld = _jump.IsPressed(),
                 AttackDown = _attack.WasPressedThisFrame(),
-                Move = _move.ReadValue<Vector2>()
+                Move = _move.ReadValue<Vector2>(),
+                SettingsDown = _settings.WasPressedThisFrame(),
             };
         }
 
@@ -39,5 +41,6 @@ namespace MultiversalMakers {
         public bool JumpHeld;
         public bool DashDown;
         public bool AttackDown;
+        public bool SettingsDown;
     }
 }
