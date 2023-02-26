@@ -49,7 +49,7 @@ namespace ProjectBeelzebub
 
         public void LoadNextScene()
         {
-            SceneManager.LoadScene(Mathf.Clamp(SceneManager.GetActiveScene().buildIndex + 1, 0, SceneManager.sceneCount - 1));
+            SceneManager.LoadScene(Mathf.Clamp(SceneManager.GetActiveScene().buildIndex + 1, 0, SceneManager.sceneCount));
         }
 
     }

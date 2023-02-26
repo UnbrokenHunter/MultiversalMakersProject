@@ -55,7 +55,7 @@ namespace MultiversalMakers
             if (limitSwaps && swappedCount >= maxSwaps) return;
 
             if (AreAllTriggered())
-                SwapPlayerPlaces();
+                StartCoroutine(SwapPlayerPlaces());
         }
 
         private bool AreAllTriggered()
@@ -65,12 +65,12 @@ namespace MultiversalMakers
             return _isAllTriggered;
         }
 
-        private async void SwapPlayerPlaces()
+        private IEnumerator SwapPlayerPlaces()
         {
-            await Task.Delay((int)(swapDelay * 1000));
-         
-            if (!AreAllTriggered()) return;
-            StartSwapCooldown();
+            yield return new WaitForSeconds(swapDelay);
+
+            if (!AreAllTriggered()) yield return null;
+            StartCoroutine(StartSwapCooldown());
 
             swapPlacesEvent?.Invoke();
 
@@ -93,10 +93,10 @@ namespace MultiversalMakers
             swappedCount++;
         }
 
-        private async void StartSwapCooldown()
+        private IEnumerator StartSwapCooldown()
         {
             isOnCooldown = true;
-            await Task.Delay((int)(swapCooldown * 1000));
+            yield return new WaitForSeconds(swapCooldown);
             isOnCooldown = false;
         }
 

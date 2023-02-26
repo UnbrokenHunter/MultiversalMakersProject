@@ -36,7 +36,7 @@ MonoBehaviour:
   CrouchSlowdownFrames: 50
   CrouchBufferCheck: 0.01
   MaxAirJumps: 0
-  JumpPower: 45
+  JumpPower: 50
   MaxFallSpeed: 40
   FallAcceleration: 110
   JumpEndEarlyGravityModifier: 3

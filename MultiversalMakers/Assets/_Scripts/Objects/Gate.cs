@@ -7,7 +7,11 @@ namespace MultiversalMakers
 {
     public class Gate : MonoBehaviour
     {
+        [Header("Settings")]
+        [SerializeField] private bool isPermamemt = false;
 
+
+        [Header("Events")]
         [SerializeField] private UnityEvent OpenGate;
         [SerializeField] private UnityEvent CloseGate;
 
@@ -17,7 +21,8 @@ namespace MultiversalMakers
         }
         private void OnTriggerExit2D(Collider2D collision)
         {
-            CloseGate?.Invoke();
+            if(!isPermamemt)
+                CloseGate?.Invoke();
         }
         
     }
