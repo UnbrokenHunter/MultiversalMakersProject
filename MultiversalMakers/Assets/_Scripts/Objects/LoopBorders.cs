@@ -85,7 +85,15 @@ namespace MultiversalMakers
         {
             // Foreach particle in the player gameobject, clear all particles
             ParticleSystem[] particleSystems = playerTransform.gameObject.GetComponentsInChildren<ParticleSystem>();
-            Array.ForEach(particleSystems, particle => particle.Pause());
+            List<ParticleSystem> pList = new List<ParticleSystem>();
+            foreach(ParticleSystem ps in particleSystems)
+            {
+                if (ps.isPlaying)
+                {
+                    pList.Add(ps);
+                    ps.Pause();
+                }
+            }
 
             // Teleport player
             playerTransform.position = _newPos;
@@ -94,7 +102,9 @@ namespace MultiversalMakers
             playerTransform.GetComponentInChildren<TrailRenderer>().Clear();
 
             // Play them all again
-            Array.ForEach(particleSystems, particle => particle.Play());
+            foreach(ParticleSystem ps in pList){
+                ps.Play();
+            }
         }
 
     }

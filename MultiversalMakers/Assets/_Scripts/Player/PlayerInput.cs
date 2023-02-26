@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 namespace MultiversalMakers {
     public class PlayerInput : MonoBehaviour {
         public FrameInput FrameInput { get; private set; }
