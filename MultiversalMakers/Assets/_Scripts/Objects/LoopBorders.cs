@@ -9,9 +9,11 @@ namespace MultiversalMakers
     public class LoopBorders : MonoBehaviour
     {
         [Title("Settings")]
+        [SerializeField] private float triggerCooldown = 0.05f;
         [SerializeField] private Vector2 colliderOffset;
         [SerializeField] private Vector2 teleportationOffset;
 
+        private bool isOnCooldown = false;
         private Transform playerTransform;
         private Vector2[] cameraCorners;
 
@@ -46,6 +48,9 @@ namespace MultiversalMakers
         {
             if (!collision.CompareTag("Player")) return;
 
+            if (isOnCooldown) return;
+            StartCoroutine(TriggerCooldown());
+
             // Globally cache for convenience 
             playerTransform = collision.transform;
             Teleport(GetNewPosition());  
@@ -68,14 +73,16 @@ namespace MultiversalMakers
                 _newPlayerY = playerTransform.position.y;
             #endregion
 
+            
 
             if (_changeX)
-                _newPlayerX = (playerTransform.position.x > rightBorder ? leftBorder - teleportationOffset.x : rightBorder + teleportationOffset.x);
+                _newPlayerX = (playerTransform.position.x > rightBorder ? leftBorder + teleportationOffset.x : rightBorder - teleportationOffset.x);
 
 
             else if (_changeY)
-                _newPlayerY = (playerTransform.position.y > upBorder ? upBorder - teleportationOffset.y : downBorder + teleportationOffset.y);
+                 _newPlayerY = (playerTransform.position.y > upBorder ? upBorder + teleportationOffset.y : downBorder - teleportationOffset.y);
 
+            print("GetPos");
 
             // Return new position
             return new Vector3 (_newPlayerX, _newPlayerY, 0);
@@ -102,9 +109,16 @@ namespace MultiversalMakers
             playerTransform.GetComponentInChildren<TrailRenderer>().Clear();
 
             // Play them all again
-            foreach(ParticleSystem ps in pList){
+            foreach(ParticleSystem ps in pList) {
                 ps.Play();
             }
+        }
+
+        private IEnumerator TriggerCooldown()
+        {
+            isOnCooldown = true;
+            yield return new WaitForSeconds(triggerCooldown);
+            isOnCooldown = false;
         }
 
     }
