@@ -137,6 +137,13 @@ namespace MultiversalMakers {
         [Tooltip("The upward force given when leaving a ladder and holding up. This allows you to 'pop' on top of a ladder.")]
         public float LadderPopForce = 20f;
 
+        [Title("Bounce On Head")]
+        public bool canBounce = true;
+
+        public Vector2 BounceForce = new (5, 0);
+
+        public PlayerForce BounceForceType = PlayerForce.Decay;
+
         [Title("ATTACKS")]
         [Tooltip("Allows the player to attack")]
         public bool AllowAttacks = true;
