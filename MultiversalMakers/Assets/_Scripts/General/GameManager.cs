@@ -71,6 +71,18 @@ namespace MultiversalMakers
 
         #endregion
 
+        #region Stars
+
+        private int starCount = 8;
+        public int StarCount { get => starCount; }
+
+        public void AddStar()
+        {
+            starCount++;
+        }
+
+        #endregion
+
         #region Input
 
         private PlayerInput _input;

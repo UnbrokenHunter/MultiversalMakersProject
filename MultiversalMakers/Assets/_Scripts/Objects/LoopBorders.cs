@@ -48,7 +48,7 @@ namespace MultiversalMakers
         {
             if (!collision.CompareTag("Player")) return;
 
-            if (isOnCooldown) return;
+            if (isOnCooldown && collision.transform == playerTransform) return;
             StartCoroutine(TriggerCooldown());
 
             // Globally cache for convenience 
