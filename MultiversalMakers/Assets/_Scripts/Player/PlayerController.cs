@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -43,6 +44,7 @@ namespace MultiversalMakers {
         public bool GrabbingLedge { get; private set; }
         public bool ClimbingLedge { get; private set; }
 
+        [Button]
         public virtual void ApplyVelocity(Vector2 vel, PlayerForce forceType) {
             if (forceType == PlayerForce.Burst) _speed += vel;
             else _currentExternalVelocity += vel;
@@ -136,7 +138,7 @@ namespace MultiversalMakers {
             // Ground and Ceiling
             _groundHitCount = Physics2D.CapsuleCastNonAlloc(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _groundHits, _stats.GrounderDistance, ~_stats.PlayerLayer);
             _ceilingHitCount = Physics2D.CapsuleCastNonAlloc(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _ceilingHits, _stats.GrounderDistance, ~_stats.PlayerLayer);
-
+            
             // Walls and Ladders
             var bounds = GetWallDetectionBounds(); // won't be able to detect a wall if we're crouching mid-air
             _wallHitCount = Physics2D.OverlapBoxNonAlloc(bounds.center, bounds.size, 0, _wallHits, _stats.ClimbableLayer);
@@ -195,6 +197,21 @@ namespace MultiversalMakers {
         }
 
         #endregion
+
+        #region Player Bouncing 
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (!other.gameObject.CompareTag("Player")) return;
+            other.TryGetComponent(out PlayerController otherController);
+
+            if (otherController != null && _grounded && _stats.canBounce)
+            {
+                otherController.ApplyVelocity(_stats.BounceForce, _stats.BounceForceType);
+            }
+        }
+
+        #endregion 
 
         #region Walls
 

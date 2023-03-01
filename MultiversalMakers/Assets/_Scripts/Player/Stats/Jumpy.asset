@@ -60,6 +60,9 @@ MonoBehaviour:
   LadderSlideSpeed: 12
   LadderCooldownFrames: 8
   LadderPopForce: 20
+  canBounce: 1
+  BounceForce: {x: 0, y: 70}
+  BounceForceType: 1
   AllowAttacks: 0
   AttackFrameCooldown: 15
   ExternalVelocityDecay: 100

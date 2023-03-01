@@ -15,5 +15,13 @@ namespace MultiversalMakers
             => EventSystem.current.SetSelectedGameObject(newSelectedObject);
 
         public void TriggerMenuEvent() => onMenuChangeEvent?.Invoke();
+
+        public void TriggerMenuEventAfter(float time) => StartCoroutine(MenuEventWaiter(time));
+
+        private IEnumerator MenuEventWaiter(float time)
+        {
+            yield return new WaitForSecondsRealtime(time);
+            onMenuChangeEvent?.Invoke();
+        }
     }
 }
