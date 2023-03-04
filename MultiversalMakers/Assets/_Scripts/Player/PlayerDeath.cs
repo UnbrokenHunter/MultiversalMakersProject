@@ -1,3 +1,4 @@
+using ProjectBeelzebub;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,19 +24,21 @@ namespace MultiversalMakers
         {
             if(collision.collider.gameObject.layer == 8)
             {
-                killAll();
+                KillAll();
             }
         }
 
-        public static void killAll()
+        public static void KillAll()
         {
+            LevelManager.Instance.ReloadScene();
+
             //if we want a blackscreen flash on death, turn it on here
-            int removeCount = players.Count;
-            foreach (PlayerDeath p in players)
-            {
-                p.Die();
-            }
-            players.RemoveRange(0, removeCount);
+            //int removeCount = players.Count;
+            //foreach (PlayerDeath p in players)
+            //{
+            //    p.Die();
+            //}
+            //players.RemoveRange(0, removeCount);
             // and off here
         }
         public void Die()
