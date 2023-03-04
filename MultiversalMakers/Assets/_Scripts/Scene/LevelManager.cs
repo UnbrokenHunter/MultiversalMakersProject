@@ -1,3 +1,5 @@
+using MoreMountains.Feedbacks;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -25,6 +27,17 @@ namespace ProjectBeelzebub
             {
                 Destroy(gameObject);
             }
+        }
+        public void ReloadScene()
+        {
+            GetComponent<MMF_Player>().PlayFeedbacks(); // Vignette
+            StartCoroutine(LoadWait());
+        }
+        private IEnumerator LoadWait()
+        {
+            yield return new WaitForSeconds(0.05f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
         }
 
         public void LoadScene(string sceneName)

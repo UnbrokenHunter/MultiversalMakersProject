@@ -94,7 +94,7 @@ namespace MoreMountains.Feedbacks
 		[MMFReadOnly]
 		public float TargetTimeScale = 1f;
 		
-		[MMFInspectorButtonAttribute("TestButtonToSlowDownTime")]
+		[MMFInspectorButton("TestButtonToSlowDownTime")]
 		/// a test button for the inspector
 		public bool TestButton;
 
