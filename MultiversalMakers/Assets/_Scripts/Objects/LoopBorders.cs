@@ -74,7 +74,6 @@ namespace MultiversalMakers
             #endregion
 
             
-
             if (_changeX)
                 _newPlayerX = (playerTransform.position.x > rightBorder ? leftBorder + teleportationOffset.x : rightBorder - teleportationOffset.x);
 

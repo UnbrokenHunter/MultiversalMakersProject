@@ -66,6 +66,12 @@ namespace MultiversalMakers {
         [Tooltip("The immediate velocity applied when jumping")]
         public float JumpPower = 36;
 
+        [Tooltip("Whether or not the player can hover")]
+        public bool CanHover = true;
+
+        [Tooltip("The reduction in fall speed when hovering")]
+        public float InAirHoverMultipler = 0.5f;
+
         [Tooltip("The maximum vertical movement speed")]
         public float MaxFallSpeed = 40;
 

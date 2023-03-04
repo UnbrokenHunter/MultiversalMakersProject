@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3870887151736002428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3870887153444500649}
@@ -74,12 +74,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2009595745, guid: 9051eb189d37a5f458bf112867b224b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d46ffc2c82d93eb4e95dc619a053b11f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 2
+  m_Size: {x: 3, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -105,13 +105,13 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  m_ShapePathHash: 0
+  - {x: -1.512949, y: -0.3602829, z: 0}
+  - {x: -1.5, y: 0.4, z: 0}
+  - {x: 1.5, y: 0.4, z: 0}
+  - {x: 1.5014582, y: -0.37861156, z: 0}
+  m_ShapePathHash: 1685764005
   m_Mesh: {fileID: 0}
-  m_InstanceId: -254508
+  m_InstanceId: -127522
 --- !u!1 &3870887153444500648
 GameObject:
   m_ObjectHideFlags: 0

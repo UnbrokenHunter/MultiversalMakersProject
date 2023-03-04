@@ -94,6 +94,8 @@ namespace MultiversalMakers {
                 _jumpToConsume = true;
                 _frameJumpWasPressed = _fixedFrame;
             }
+            if(_stats.CanHover && _frameInput.JumpHeld) _hover = true;
+            else _hover = false;
 
             if (_frameInput.Move.x != 0) _stickyFeet = false;
 
@@ -333,6 +335,7 @@ namespace MultiversalMakers {
 
         #region Jumping
 
+        private bool _hover;
         private bool _jumpToConsume;
         private bool _bufferedJumpUsable;
         private bool _endedJumpEarly;
@@ -478,9 +481,14 @@ namespace MultiversalMakers {
             }
             // In Air
             else {
+                var maxFallSpeed = _stats.MaxWallFallSpeed * (_hover  ? _stats.InAirHoverMultipler : 1);
+
                 var inAirGravity = _stats.FallAcceleration;
-                if (_endedJumpEarly && _speed.y > 0) inAirGravity *= _stats.JumpEndEarlyGravityModifier;
-                _speed.y = Mathf.MoveTowards(_speed.y, -_stats.MaxFallSpeed, inAirGravity * Time.fixedDeltaTime);
+
+                if (_endedJumpEarly && _speed.y > 0)
+                    inAirGravity *= _stats.JumpEndEarlyGravityModifier;
+
+                _speed.y = Mathf.MoveTowards(_speed.y, -maxFallSpeed, inAirGravity * Time.fixedDeltaTime);
             }
         }
 

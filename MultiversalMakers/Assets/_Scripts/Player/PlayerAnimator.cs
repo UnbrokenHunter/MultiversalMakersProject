@@ -1,4 +1,6 @@
 using DarkTonic.MasterAudio;
+using MoreMountains.Feedbacks;
+using System;
 using UnityEngine;
 
 namespace MultiversalMakers {
@@ -7,6 +9,8 @@ namespace MultiversalMakers {
         private IPlayerController _player;
         private Animator _anim;
         private SpriteRenderer _renderer;
+        [SerializeField] private MMF_Player _jumpFeedback;
+        [SerializeField] private MMF_Player _idleFeedback;
 
         private void Awake() {
             _player = GetComponentInParent<IPlayerController>();
@@ -33,6 +37,9 @@ namespace MultiversalMakers {
         private void HandleSpriteFlipping() {
             if (_isOnWall &_player.WallDirection != 0) _renderer.flipX = _player.WallDirection == -1;
             else if (Mathf.Abs(_player.Input.x) > 0.1f) _renderer.flipX = _player.Input.x < 0;
+
+            // Rocket Particles
+            _rocketParticles.transform.localPosition = new Vector3 (_renderer.flipX ? Mathf.Abs(_rocketParticles.transform.localPosition.x) : -Mathf.Abs(_rocketParticles.transform.localPosition.x), _rocketParticles.transform.localPosition.y, 0);
         }
 
         #region Ground Movement
@@ -44,16 +51,21 @@ namespace MultiversalMakers {
         [SerializeField] private string _footstepClips;
 
         private ParticleSystem.MinMaxGradient _currentGradient = new(Color.white, Color.white);
-        private Vector2 _tiltVelocity;
+        [SerializeField] private Vector2 _tiltVelocity;
 
         private void HandleGroundEffects() {
             // Move particles get bigger as you gain momentum
             var speedPoint = Mathf.InverseLerp(0, _player.PlayerStats.MaxSpeed, Mathf.Abs(_player.Speed.x));
             _moveParticles.transform.localScale = Vector3.MoveTowards(_moveParticles.transform.localScale, Vector3.one * speedPoint, 2 * Time.deltaTime);
 
-            // Tilt with slopes
-            var withinAngle = Vector2.Angle(Vector2.up, _player.GroundNormal) <= _maxTiltAngle;
-            transform.up = Vector2.SmoothDamp(transform.up, _grounded && withinAngle ? _player.GroundNormal : Vector2.up, ref _tiltVelocity, _tiltChangeSpeed);
+            // Rotate
+            var targetRotVector = new Vector3(0, 0, Mathf.Lerp(_maxTiltAngle, -_maxTiltAngle, Mathf.InverseLerp(-1, 1, _player.Input.x)));
+            _anim.transform.rotation = Quaternion.RotateTowards(_anim.transform.rotation, Quaternion.Euler(targetRotVector), _tiltChangeSpeed * Time.deltaTime);
+
+            if (_currentState == Idle)
+            {
+                _idleFeedback.PlayFeedbacks();
+            }
         }
 
         private int _stepIndex;
@@ -81,6 +93,8 @@ namespace MultiversalMakers {
         private void OnWallGrabChanged(bool onWall) {
             _hitWall = _isOnWall = onWall;
             _dismountedWall = !onWall;
+
+            _rocketParticles.Stop();
         }
 
         private void HandleWallSlideEffects() {
@@ -132,7 +146,7 @@ namespace MultiversalMakers {
         [SerializeField] private float _maxImpactForce = 40;
         [SerializeField] private float _landAnimDuration = 0.1f;
         [SerializeField] private string _landClip, _jumpClip, _doubleJumpClip;
-        [SerializeField] private ParticleSystem _jumpParticles, _launchParticles, _doubleJumpParticles, _landParticles;
+        [SerializeField] private ParticleSystem _jumpParticles, _launchParticles, _rocketParticles, _doubleJumpParticles, _landParticles;
         [SerializeField] private Transform _jumpParticlesParent;
 
         private bool _jumpTriggered;
@@ -147,6 +161,9 @@ namespace MultiversalMakers {
             MasterAudio.PlaySound(_jumpClip);
 
             _jumpParticlesParent.localRotation = Quaternion.Euler(0, 0, _player.WallDirection * 60f);
+
+            _jumpFeedback.PlayFeedbacks();
+            _rocketParticles.Play();
 
             SetColor(_jumpParticles);
             SetColor(_launchParticles);
@@ -166,6 +183,7 @@ namespace MultiversalMakers {
             if (impactForce >= _minImpactForce) {
                 var p = Mathf.InverseLerp(_minImpactForce, _maxImpactForce, impactForce);
                 _landed = true;
+                 
                 _landParticles.transform.localScale = p * Vector3.one;
                 _landParticles.Play();
                 SetColor(_landParticles);
@@ -174,6 +192,10 @@ namespace MultiversalMakers {
 
             if (_grounded) _moveParticles.Play();
             else _moveParticles.Stop();
+
+            if(_grounded)
+                _rocketParticles.Stop();
+
         }
 
         #endregion
