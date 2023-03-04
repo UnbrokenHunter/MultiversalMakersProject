@@ -391,6 +391,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 9041296144557981348}
+        m_TargetAssemblyTypeName: MultiversalMakers.SetTimescale, Assembly-CSharp
+        m_MethodName: SetScaleOnManager
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 966804724434996455}
         m_TargetAssemblyTypeName: MultiversalMakers.ChangeScene, Assembly-CSharp
         m_MethodName: LoadNextScene
@@ -930,6 +942,7 @@ GameObject:
   - component: {fileID: 3750443338272463565}
   - component: {fileID: 5408440193013273523}
   - component: {fileID: 1852919634}
+  - component: {fileID: 9041296144557981348}
   m_Layer: 0
   m_Name: Win
   m_TagString: Untagged
@@ -1422,7 +1435,7 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 3277105603107214133}
         DebugActive: 0
-        Mode: 1
+        Mode: 0
         TimeScale: 0
         TimeScaleDuration: 1
         ResetTimescaleOnStop: 0
@@ -1523,6 +1536,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 9041296144557981348}
+        m_TargetAssemblyTypeName: MultiversalMakers.SetTimescale, Assembly-CSharp
+        m_MethodName: SetScale
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 9041296144557981348}
+        m_TargetAssemblyTypeName: MultiversalMakers.SetTimescale, Assembly-CSharp
+        m_MethodName: SetScaleOnManager
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2914,6 +2951,18 @@ MonoBehaviour:
   useUnitySubmitSound: 0
   useUnityCancelSound: 0
   useUnityToggleSound: 0
+--- !u!114 &9041296144557981348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753896340864374920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8706f6a2147426c40be1abd6b8a4f4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4521948593461279524
 GameObject:
   m_ObjectHideFlags: 0
@@ -3262,6 +3311,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 9041296144557981348}
+        m_TargetAssemblyTypeName: MultiversalMakers.SetTimescale, Assembly-CSharp
+        m_MethodName: SetScaleOnManager
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8575435093580600048}
         m_TargetAssemblyTypeName: MultiversalMakers.ChangeScene, Assembly-CSharp
         m_MethodName: LoadScene
