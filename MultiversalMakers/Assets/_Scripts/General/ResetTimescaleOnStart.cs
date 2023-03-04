@@ -1,3 +1,5 @@
+using MoreMountains.Feedbacks;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace MultiversalMakers
@@ -6,11 +8,15 @@ namespace MultiversalMakers
     {
         [SerializeField] private float defaultTimescale = 1.0f;
 
-        private void Start() => Time.timeScale = defaultTimescale;
+        [Button]
+        private void Start()
+        {
+            MMTimeManager.Instance.SetTimeScaleTo(defaultTimescale);
+        }
 
         private void Update()
         {
-            print(Time.timeScale);
+            print($" Normal: {Time.timeScale} Current: {MMTimeManager.Instance.CurrentTimeScale} Target: { MMTimeManager.Instance.TargetTimeScale } MM Normal: { MMTimeManager.Instance.NormalTimeScale } ");
         }
     }
 }

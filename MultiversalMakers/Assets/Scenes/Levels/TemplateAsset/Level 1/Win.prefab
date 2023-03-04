@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 7585206227185207700}
   - component: {fileID: 4220032260198984070}
   - component: {fileID: 966804724434996455}
+  - component: {fileID: 7750167078432344164}
   m_Layer: 5
   m_Name: Play Next
   m_TagString: Untagged
@@ -391,7 +392,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9041296144557981348}
+      - m_Target: {fileID: 7750167078432344164}
         m_TargetAssemblyTypeName: MultiversalMakers.SetTimescale, Assembly-CSharp
         m_MethodName: SetScaleOnManager
         m_Mode: 4
@@ -425,6 +426,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5b3a1b406736ab4e929d0408ca8a897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7750167078432344164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973881674653101796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8706f6a2147426c40be1abd6b8a4f4a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2014378591284679385
@@ -939,7 +952,6 @@ GameObject:
   - component: {fileID: 3753896340864374925}
   - component: {fileID: 6525717246098084499}
   - component: {fileID: 3277105603107214133}
-  - component: {fileID: 3750443338272463565}
   - component: {fileID: 5408440193013273523}
   - component: {fileID: 1852919634}
   - component: {fileID: 9041296144557981348}
@@ -1501,22 +1513,6 @@ MonoBehaviour:
             m_RotationOrder: 4
           Initialized: 0
         TimescaleLerpDurationOnReset: 1
---- !u!114 &3750443338272463565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3753896340864374920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f7de9ef06f04864391a928af29f4b46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NormalTimeScale: 1
-  CurrentTimeScale: 1
-  TargetTimeScale: 1
-  TestButton: 0
 --- !u!114 &5408440193013273523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1536,18 +1532,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 9041296144557981348}
-        m_TargetAssemblyTypeName: MultiversalMakers.SetTimescale, Assembly-CSharp
-        m_MethodName: SetScale
-        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3311,18 +3295,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9041296144557981348}
-        m_TargetAssemblyTypeName: MultiversalMakers.SetTimescale, Assembly-CSharp
-        m_MethodName: SetScaleOnManager
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 8575435093580600048}
         m_TargetAssemblyTypeName: MultiversalMakers.ChangeScene, Assembly-CSharp
         m_MethodName: LoadScene

@@ -8,7 +8,9 @@ namespace MultiversalMakers
     {
         public void SetScale(float timeScaleTarget) => Time.timeScale = timeScaleTarget;
 
-        public void SetScaleOnManager(float timeScaleTarget) => GetComponent<MMTimeManager>().NormalTimeScale = timeScaleTarget;
-
+        public void SetScaleOnManager(float timeScaleTarget)
+        {
+            MMTimeManager.Instance.SetTimeScaleTo(timeScaleTarget);
+        }
     }
 }

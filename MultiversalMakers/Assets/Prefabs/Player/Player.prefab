@@ -15490,7 +15490,7 @@ MonoBehaviour:
   _maxImpactForce: 40
   _landAnimDuration: 0.1
   _landClip: Landing
-  _jumpClip: Jump
+  _jumpClip: Rocket
   _doubleJumpClip: Double Jump
   _jumpParticles: {fileID: 3836054527589566771}
   _launchParticles: {fileID: 3836054527797046534}
