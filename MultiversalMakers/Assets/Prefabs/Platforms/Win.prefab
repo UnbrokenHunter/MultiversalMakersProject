@@ -1056,7 +1056,7 @@ MonoBehaviour:
   FeedbacksList:
   - rid: 4351524630545301504
   - rid: 4351524630545301506
-  - rid: 4351524630545301509
+  - rid: 7152214377138749440
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   ForceStopFeedbacksOnDisable: 1
@@ -1242,7 +1242,7 @@ MonoBehaviour:
         Velocity: {x: 1, y: 1, z: 1}
         ImpulseSource: {fileID: 6525717246098084499}
         ClearImpulseOnStop: 0
-    - rid: 4351524630545301509
+    - rid: 7152214377138749440
       type: {class: MMF_TimescaleModifier, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
@@ -1310,22 +1310,22 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 3277105603107214133}
         DebugActive: 0
-        Mode: 0
-        TimeScale: 0.5
+        Mode: 1
+        TimeScale: 0
         TimeScaleDuration: 1
         ResetTimescaleOnStop: 0
-        TimeScaleLerp: 0
+        TimeScaleLerp: 1
         TimescaleLerpMode: 0
-        TimeScaleLerpSpeed: 1
+        TimeScaleLerpSpeed: 4
         TimescaleLerpCurve:
           MMTweenDefinitionType: 1
-          MMTweenCurve: 4
+          MMTweenCurve: 7
           Curve:
             serializedVersion: 2
             m_Curve:
             - serializedVersion: 3
               time: 0
-              value: 0
+              value: 0.4829712
               inSlope: 0
               outSlope: 0
               tangentMode: 0
@@ -1335,11 +1335,11 @@ MonoBehaviour:
             - serializedVersion: 3
               time: 1
               value: 1
-              inSlope: 0
-              outSlope: 0
+              inSlope: -0.042578783
+              outSlope: -0.042578783
               tangentMode: 0
               weightedMode: 0
-              inWeight: 0
+              inWeight: 0.16680259
               outWeight: 0
             m_PreInfinity: 2
             m_PostInfinity: 2

@@ -10,7 +10,6 @@ Material:
   m_Name: SineMove
   m_Shader: {fileID: 4800000, guid: 61975e579c0c5b6458ad03dae205bad0, type: 3}
   m_ValidKeywords:
-  - _ENABLESHINE_ON
   - _ENABLESINEMOVE_ON
   - _SHADERSPACE_UV
   - _TIMESETTINGS_LINEAR_DEFAULT
@@ -185,7 +184,7 @@ Material:
     - _EnableRecolor: 0
     - _EnableSaturation: 0
     - _EnableShiftHue: 0
-    - _EnableShine: 1
+    - _EnableShine: 0
     - _EnableSineGlow: 0
     - _EnableSineMove: 1
     - _EnableSineRotate: 0
@@ -429,7 +428,7 @@ Material:
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShineColor: {r: 11.98431, g: 11.98431, b: 11.98431, a: 0}
     - _SineGlowColor: {r: 0, g: 2.007843, b: 2.996078, a: 0}
-    - _SineMoveFrequency: {r: 1, g: 1, b: 0, a: 0}
+    - _SineMoveFrequency: {r: 1, g: 3, b: 0, a: 0}
     - _SineMoveOffset: {r: 0, g: 0.3, b: 0, a: 0}
     - _SineRotatePivot: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _SourceAlphaDissolveNoiseScale: {r: 0.3, g: 0.3, b: 0, a: 0}

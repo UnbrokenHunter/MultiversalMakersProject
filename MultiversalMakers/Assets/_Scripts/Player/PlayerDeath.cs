@@ -12,7 +12,7 @@ namespace MultiversalMakers
         public LayerMask deathMask;
         
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             initialPos = transform.position;
             initialRot = transform.rotation;

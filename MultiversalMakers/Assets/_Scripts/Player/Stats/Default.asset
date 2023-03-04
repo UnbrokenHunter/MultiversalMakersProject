@@ -36,10 +36,12 @@ MonoBehaviour:
   CrouchSlowdownFrames: 50
   CrouchBufferCheck: 0.01
   MaxAirJumps: 0
-  JumpPower: 36
-  MaxFallSpeed: 40
-  FallAcceleration: 110
-  JumpEndEarlyGravityModifier: 3
+  JumpPower: 35
+  CanHover: 1
+  InAirHoverMultipler: 0.5
+  MaxFallSpeed: 14.3
+  FallAcceleration: 90
+  JumpEndEarlyGravityModifier: 2
   CoyoteFrames: 7
   JumpBufferFrames: 7
   AllowWalls: 1
