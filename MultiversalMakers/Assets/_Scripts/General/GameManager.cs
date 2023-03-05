@@ -73,7 +73,7 @@ namespace MultiversalMakers
 
         #region Stars
 
-        private int starCount = 8;
+        private int starCount = 1;
         public int StarCount { get => starCount; }
 
         public void AddStar()

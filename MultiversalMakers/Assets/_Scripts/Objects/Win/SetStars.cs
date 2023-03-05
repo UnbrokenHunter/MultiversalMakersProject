@@ -9,6 +9,11 @@ namespace MultiversalMakers
     {
         [SerializeField] private Sprite filledStar;
 
+        private void OnEnable()
+        {
+            SetLevelStars();
+        }
+
         [Button]
         public void SetLevelStars()
         {
