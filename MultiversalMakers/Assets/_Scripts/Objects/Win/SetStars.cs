@@ -1,7 +1,5 @@
 using Sirenix.OdinInspector;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace MultiversalMakers
@@ -11,10 +9,7 @@ namespace MultiversalMakers
         [SerializeField] private Sprite filledStar;
         [SerializeField] private float animationTime = 0.05f;
 
-        private void OnEnable()
-        {
-            StartCoroutine(SetLevelStars());
-        }
+        private void OnEnable() => StartCoroutine(SetLevelStars());
 
         [Button]
         public IEnumerator SetLevelStars()
@@ -66,6 +61,5 @@ namespace MultiversalMakers
 
             }
 		}
-
 	}
 }
