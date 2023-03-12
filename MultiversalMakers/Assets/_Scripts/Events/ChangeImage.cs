@@ -11,11 +11,15 @@ namespace MultiversalMakers
 
         [SerializeField] private Image image;
 
-        [Button]
+		public Image Image { get => image; }
+
+		[Button]
         public void ChangeSprite(Sprite newSprite)
         {
             image.sprite = newSprite;
         }
+
+
 
     }
 }
