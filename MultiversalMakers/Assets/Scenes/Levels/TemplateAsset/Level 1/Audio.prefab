@@ -160,15 +160,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931518f9ca6c3844891dee74db8ed494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
+  weight: 4
   probabilityToPlay: 100
   importance: 5
   isUninterruptible: 0
   useLocalization: 0
-  useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: 0
-  randomPitchMax: 0
+  useRandomPitch: 1
+  randomPitchMode: 1
+  randomPitchMin: 0.94387394
+  randomPitchMax: 1.0533614
   useRandomVolume: 0
   randomVolumeMode: 0
   randomVolumeMin: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
   groupPlayType: 0
   isSelected: 0
   isExpanded: 1
-  groupMasterVolume: 0.12589255
+  groupMasterVolume: 0.40738025
   retriggerPercentage: 100
   curVariationMode: 0
   alwaysHighestPriority: 0
@@ -293,8 +293,8 @@ MonoBehaviour:
   limitPerXFrames: 1
   minimumTimeBetween: 0.1
   useClipAgePriority: 0
-  limitPolyphony: 0
-  voiceLimitCount: 1
+  limitPolyphony: 1
+  voiceLimitCount: 2
   targetDespawnedBehavior: 0
   despawnFadeTime: 1
   isUsingOcclusion: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 3190
+  frames: 13837
 --- !u!1 &2351197647738298807
 GameObject:
   m_ObjectHideFlags: 0
@@ -4668,7 +4668,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8650811234797089681}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

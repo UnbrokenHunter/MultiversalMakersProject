@@ -15520,7 +15520,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 1aa7222fd2cb6914595703b3d65c8f6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15541,11 +15541,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1010433177, guid: d509ab327ad7df94597ccaa2e501dcfc, type: 3}
+  m_Sprite: {fileID: -953747117, guid: e3677aa0bb78a154bb4abb4cf44cf154, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 1
+  m_DrawMode: 0
   m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -15562,7 +15562,7 @@ Animator:
   m_GameObject: {fileID: 3836054527376998751}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4c8cae7307e2d8544a688447cf38853d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4e48fc48bf93e3d45bbcb3c61fd78b65, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -15688,13 +15688,13 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.4378929, y: -0.7312343, z: 0}
-  - {x: -0.43109512, y: 0.7597103, z: 0}
-  - {x: 0.4205799, y: 0.75185776, z: 0}
-  - {x: 0.4043231, y: -0.7229557, z: 0}
-  m_ShapePathHash: 954456053
+  - {x: -0.35, y: -1, z: 0}
+  - {x: -0.35, y: 0.5, z: 0}
+  - {x: 0.35, y: 0.5, z: 0}
+  - {x: 0.36, y: -1, z: 0}
+  m_ShapePathHash: 1641923966
   m_Mesh: {fileID: 0}
-  m_InstanceId: -126504
+  m_InstanceId: -51510
 --- !u!1 &3836054527589566774
 GameObject:
   m_ObjectHideFlags: 0
@@ -40349,7 +40349,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0, b: 0, a: 1}
+        key0: {r: 1, g: 0.34509805, b: 0.34509805, a: 1}
         key1: {r: 1, g: 0.29760373, b: 0, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
