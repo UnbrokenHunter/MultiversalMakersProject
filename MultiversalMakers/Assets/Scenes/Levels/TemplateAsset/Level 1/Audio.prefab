@@ -160,15 +160,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931518f9ca6c3844891dee74db8ed494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
+  weight: 4
   probabilityToPlay: 100
   importance: 5
   isUninterruptible: 0
   useLocalization: 0
-  useRandomPitch: 0
-  randomPitchMode: 0
-  randomPitchMin: 0
-  randomPitchMax: 0
+  useRandomPitch: 1
+  randomPitchMode: 1
+  randomPitchMin: 0.94387394
+  randomPitchMax: 1.0533614
   useRandomVolume: 0
   randomVolumeMode: 0
   randomVolumeMin: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
   groupPlayType: 0
   isSelected: 0
   isExpanded: 1
-  groupMasterVolume: 0.12589255
+  groupMasterVolume: 0.40738025
   retriggerPercentage: 100
   curVariationMode: 0
   alwaysHighestPriority: 0
@@ -293,8 +293,8 @@ MonoBehaviour:
   limitPerXFrames: 1
   minimumTimeBetween: 0.1
   useClipAgePriority: 0
-  limitPolyphony: 0
-  voiceLimitCount: 1
+  limitPolyphony: 1
+  voiceLimitCount: 2
   targetDespawnedBehavior: 0
   despawnFadeTime: 1
   isUsingOcclusion: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 3190
+  frames: 13837
 --- !u!1 &2351197647738298807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,10 +2518,10 @@ MonoBehaviour:
   loopPlaylist: 1
   _playlistVolume: 1
   isMuted: 0
-  startPlaylistName: 
+  startPlaylistName: Music
   syncGroupNum: -1
   ignoreListenerPause: 0
-  mixerChannel: {fileID: 0}
+  mixerChannel: {fileID: 8880542380030263592, guid: d656e9976bc375143bc4e799e188f49d, type: 2}
   spatialBlendType: 0
   spatialBlend: 0
   initializedEventExpanded: 0
@@ -3795,8 +3795,8 @@ MonoBehaviour:
   textGroupFilter: 
   resourceClipsPauseDoNotUnload: 0
   playlistControllerPrefab: {fileID: 400000, guid: 79a29bd9c3eb74b489a2ddfbd1a78e7d, type: 3}
-  persistBetweenScenes: 0
-  shouldLogDestroys: 0
+  persistBetweenScenes: 1
+  shouldLogDestroys: 1
   showBusColors: 0
   showGroupImportance: 0
   areGroupsExpanded: 1
@@ -3833,12 +3833,12 @@ MonoBehaviour:
   showSelectedRangeSoundGizmos: 1
   rangeGizmoColor: {r: 0, g: 1, b: 0, a: 1}
   selectedRangeGizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  showAdvancedSettings: 0
+  showAdvancedSettings: 1
   showLocalization: 0
   showVideoPlayerSettings: 0
   useTextPlaylistFilter: 0
   textPlaylistFilter: 
-  playListExpanded: 0
+  playListExpanded: 1
   playlistsExpanded: 1
   musicSpatialBlendType: 0
   musicSpatialBlend: 0
@@ -3848,7 +3848,78 @@ MonoBehaviour:
   defaultGroupPlayType: 0
   newGroupSpatialType: 1
   newGroupSpatialBlend: 1
-  musicPlaylists: []
+  musicPlaylists:
+  - isExpanded: 1
+    playlistName: Music
+    songTransitionType: 1
+    MusicSettings:
+    - alias: 
+      audLocation: 0
+      clip: {fileID: 8300000, guid: f5419eb3039eb8d419fca31f97aebfa3, type: 3}
+      songName: Synthwave2 Intro
+      resourceFileName: 
+      volume: 1
+      pitch: 1
+      isExpanded: 1
+      isLoop: 0
+      isChecked: 1
+      metadataStringValues: []
+      metadataBoolValues: []
+      metadataIntValues: []
+      metadataFloatValues: []
+      metadataExpanded: 1
+      songStartTimeMode: 0
+      customStartTime: 0
+      customStartTimeMax: 0
+      lastKnownTimePoint: 0
+      wasLastKnownTimePointSet: 0
+      songIndex: 0
+      sectionStartTime: 0
+      sectionEndTime: 0
+      songStartedEventExpanded: 0
+      songStartedCustomEvent: 
+      songChangedEventExpanded: 0
+      songChangedCustomEvent: 
+    - alias: 
+      audLocation: 0
+      clip: {fileID: 8300000, guid: b23f4adc7f2874a46830763800a2b360, type: 3}
+      songName: Synthwave2 Main
+      resourceFileName: 
+      volume: 1
+      pitch: 1
+      isExpanded: 1
+      isLoop: 1
+      isChecked: 1
+      metadataStringValues: []
+      metadataBoolValues: []
+      metadataIntValues: []
+      metadataFloatValues: []
+      metadataExpanded: 1
+      songStartTimeMode: 0
+      customStartTime: 0
+      customStartTimeMax: 0
+      lastKnownTimePoint: 0
+      wasLastKnownTimePointSet: 0
+      songIndex: 0
+      sectionStartTime: 0
+      sectionEndTime: 0
+      songStartedEventExpanded: 0
+      songStartedCustomEvent: 
+      songChangedEventExpanded: 0
+      songChangedCustomEvent: 
+    bulkLocationMode: 0
+    crossfadeMode: 0
+    crossFadeTime: 1
+    fadeInFirstSong: 0
+    fadeOutLastSong: 0
+    bulkEditMode: 0
+    isTemporary: 0
+    showMetadata: 0
+    songMetadataProps: []
+    newMetadataPropName: PropertyName
+    newMetadataPropType: 1
+    newMetadataPropRequired: 1
+    newMetadataPropCanHaveMult: 0
   _masterAudioVolume: 1
   vrSettingsExpanded: 0
   useSpatializer: 0
@@ -3856,8 +3927,8 @@ MonoBehaviour:
   addOculusAudioSources: 0
   addResonanceAudioSources: 0
   ignoreTimeScale: 0
-  useGaplessPlaylists: 0
-  useGaplessAutoReschedule: 0
+  useGaplessPlaylists: 1
+  useGaplessAutoReschedule: 1
   saveRuntimeChanges: 0
   prioritizeOnDistance: 0
   rePrioritizeEverySecIndex: 0
@@ -3902,7 +3973,7 @@ MonoBehaviour:
   defaultRiseVolStart: 0.5
   defaultUnduckTime: 1
   defaultDuckedVolumeCut: -6
-  crossFadeTime: 1
+  crossFadeTime: 0
   _masterPlaylistVolume: 1
   showGroupSelect: 0
   hideGroupsWithNoActiveVars: 0
@@ -4668,7 +4739,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8650811234797089681}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
