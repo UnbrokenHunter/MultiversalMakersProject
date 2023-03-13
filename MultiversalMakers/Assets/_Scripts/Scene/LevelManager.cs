@@ -28,11 +28,13 @@ namespace ProjectBeelzebub
                 Destroy(gameObject);
             }
         }
+
         public void ReloadScene()
         {
             GetComponent<MMF_Player>().PlayFeedbacks(); // Vignette
             StartCoroutine(LoadWait());
         }
+
         private IEnumerator LoadWait()
         {
             yield return new WaitForSeconds(0.05f);
@@ -40,30 +42,21 @@ namespace ProjectBeelzebub
 
         }
 
-        public void LoadScene(string sceneName)
-        {
-            SceneManager.LoadScene (sceneName);
-        }
+        public void LoadScene(string sceneName) => SceneManager.LoadScene(sceneName);
 
         public void AllowSceneComplete()
         {
             if(scene != null)
-            {
                 scene.allowSceneActivation = true;
-            }
         }
 
 		public void LoadSceneAsync(string sceneName)
 		{
-            print("Start Loading Scene");
 			scene = SceneManager.LoadSceneAsync(sceneName);
             scene.allowSceneActivation = false;
 		}
 
-        public void LoadNextScene()
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        public void LoadNextScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 }
