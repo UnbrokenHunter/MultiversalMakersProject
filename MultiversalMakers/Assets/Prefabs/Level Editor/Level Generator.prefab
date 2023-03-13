@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3346911579331320582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3346911579331320581}
+  - component: {fileID: 3346911579331320580}
+  m_Layer: 0
+  m_Name: Level Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3346911579331320581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346911579331320582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3346911579331320580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3346911579331320582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41167153543129c499a3c6c46d402803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  map: {fileID: 2800000, guid: 97d1fb7042ece8740b899068bad770c1, type: 3}
+  objects:
+  - varients:
+    - name: Red Tile
+      varientColor: {r: 0.7686275, g: 0.078431375, b: 0.06666667, a: 1}
+      objectType: 1
+      tileObject: {fileID: 11400000, guid: f4785107ec2563349b8171f17dfe6dba, type: 2}
+      summonObject: {fileID: 0}
+    - name: Blue Tile
+      varientColor: {r: 0.15686275, g: 0.20784315, b: 0.5764706, a: 1}
+      objectType: 1
+      tileObject: {fileID: 11400000, guid: 0c4daf5d93ff0ed44a7b06dd75abce87, type: 2}
+      summonObject: {fileID: 0}
+  - varients:
+    - name: Red Death Up
+      varientColor: {r: 0.8470589, g: 0.2627451, b: 0.08235294, a: 1}
+      objectType: 1
+      tileObject: {fileID: 11400000, guid: 2dc5f7af326330145a0f90c194032604, type: 2}
+      summonObject: {fileID: 0}
+    - name: Blue Death Up
+      varientColor: {r: 0.23137257, g: 0.3137255, b: 0.8078432, a: 1}
+      objectType: 1
+      tileObject: {fileID: 11400000, guid: 61d2bb9c2867dad478723493357dc25a, type: 2}
+      summonObject: {fileID: 0}
+  - varients:
+    - name: Red Player
+      varientColor: {r: 0.96470594, g: 0.6, b: 0.53333336, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 3836054527727189976, guid: c340e0256560e134f9d4d71fccf01aa1, type: 3}
+    - name: Blue Player
+      varientColor: {r: 0.62352943, g: 0.65882355, b: 0.854902, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 3836054527727189976, guid: 8bbea7408b954e34a8f39f275879b62e, type: 3}
+  - varients:
+    - name: Ladder
+      varientColor: {r: 0.14901961, g: 0.19607845, b: 0.21960786, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 5906143726087880640, guid: 1d117fb4dace9b74789e704d4dae5108, type: 3}
+  - varients:
+    - name: Red Collectable
+      varientColor: {r: 1, g: 0.92156863, b: 0.23137255, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 412443619941473737, guid: f7ff969fb45ae8a469a460fc10b4c96c, type: 3}
+    - name: Blue Collectable
+      varientColor: {r: 0, g: 0, b: 0, a: 0}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 0}
+  - varients:
+    - name: Red Win
+      varientColor: {r: 1, g: 0.59607846, b: 0, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 3753896340864374920, guid: 7998fe96458c9474db9eede5b3672302, type: 3}
+    - name: Blue Win
+      varientColor: {r: 0.3019608, g: 0.81568635, b: 0.882353, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 3753896340864374920, guid: 2a722b04f5ca4e745ba16a3584668f36, type: 3}
+  - varients:
+    - name: Swap Places 1
+      varientColor: {r: 0.2901961, g: 0.078431375, b: 0.54901963, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 1376774588732072356, guid: 648abfcafd0f2654b87fc18d4dc48a42, type: 3}
+  - varients:
+    - name: Orange Lamp
+      varientColor: {r: 1, g: 0.9607844, b: 0.6156863, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 1674427592043500174, guid: c0c848443426add46b74d9209ef006d3, type: 3}
+    - name: Blue Lamp
+      varientColor: {r: 0.44705886, g: 0.8352942, b: 0.44705886, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 3747871844892834921, guid: 5ccdd9322a9f1a047beddadd68ba3111, type: 3}
+  - varients:
+    - name: Key 1
+      varientColor: {r: 0.94117653, g: 0.38431376, b: 0.57254905, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 2181494508974444280, guid: 93413a898f88358449158dd25c7f4faf, type: 3}
+    - name: Gate 1
+      varientColor: {r: 0.92549026, g: 0.2509804, b: 0.4784314, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 2181494508974444280, guid: 93413a898f88358449158dd25c7f4faf, type: 3}
+  - varients:
+    - name: Key 2
+      varientColor: {r: 0.91372555, g: 0.11764707, b: 0.38823533, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 2181494508974444280, guid: 93413a898f88358449158dd25c7f4faf, type: 3}
+    - name: Gate 2
+      varientColor: {r: 0.7607844, g: 0.09411766, b: 0.35686275, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 2181494508974444280, guid: 93413a898f88358449158dd25c7f4faf, type: 3}
+  - varients:
+    - name: Key 3
+      varientColor: {r: 0.6784314, g: 0.078431375, b: 0.34117648, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 2181494508974444280, guid: 93413a898f88358449158dd25c7f4faf, type: 3}
+    - name: Gate 3
+      varientColor: {r: 0.53333336, g: 0.054901965, b: 0.30980393, a: 1}
+      objectType: 0
+      tileObject: {fileID: 0}
+      summonObject: {fileID: 2181494508974444280, guid: 93413a898f88358449158dd25c7f4faf, type: 3}
+  deathTiles:
+  - {fileID: 11400000, guid: 2dc5f7af326330145a0f90c194032604, type: 2}
+  - {fileID: 11400000, guid: 61d2bb9c2867dad478723493357dc25a, type: 2}
+  - {fileID: 11400000, guid: 29eb6599fdd358b4bb334c7949c49e05, type: 2}
+  - {fileID: 11400000, guid: ef9668e2c5939f44c8e8a643aea6be38, type: 2}
+  - {fileID: 11400000, guid: 988fce65c0972674b9e79c5b04f061f0, type: 2}
+  - {fileID: 11400000, guid: dd5b7ed9fca6c234faff6e20585b64e6, type: 2}
+  - {fileID: 11400000, guid: ed869a13b888d1d48879e96272dcced7, type: 2}
+  - {fileID: 11400000, guid: 9842a136430f4be4e8f145a9ed0f3ef4, type: 2}

@@ -81,7 +81,6 @@ namespace MultiversalMakers
             else if (_changeY)
                  _newPlayerY = (playerTransform.position.y > upBorder ? upBorder + teleportationOffset.y : downBorder - teleportationOffset.y);
 
-            print("GetPos");
 
             // Return new position
             return new Vector3 (_newPlayerX, _newPlayerY, 0);
