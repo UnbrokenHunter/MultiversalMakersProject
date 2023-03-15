@@ -30299,7 +30299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61c64124c8575748994f087b9dc1b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stats: {fileID: 11400000, guid: 92849c4d318f5bc4b970a9d39c15a57d, type: 2}
+  _stats: {fileID: 11400000, guid: 8f3e4ac96e9fac84e96172956137e1c4, type: 2}
   _standingCollider: {fileID: 3836054527727189974}
   _crouchingCollider: {fileID: 3836054527727189971}
 --- !u!114 &3836054527727189970
