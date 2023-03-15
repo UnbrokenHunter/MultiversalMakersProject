@@ -43,6 +43,7 @@ namespace ProjectBeelzebub
         }
 
         public void LoadScene(string sceneName) => SceneManager.LoadScene(sceneName);
+        public void LoadScene(int buildIndex) => SceneManager.LoadScene(buildIndex);
 
         public void AllowSceneComplete()
         {
