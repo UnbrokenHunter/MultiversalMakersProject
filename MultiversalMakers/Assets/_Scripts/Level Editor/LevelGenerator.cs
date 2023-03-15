@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using static MultiversalMakers.LevelGenerator.ObjectData;
-using static UnityEditor.PlayerSettings;
 
 namespace MultiversalMakers
 {
