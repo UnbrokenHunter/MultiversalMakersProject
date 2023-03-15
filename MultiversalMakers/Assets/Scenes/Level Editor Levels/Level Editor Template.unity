@@ -4017,6 +4017,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44795fd45d4597a43b6489c24a386633, type: 3}
+--- !u!1 &1116594589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5450947753894218589, guid: 44795fd45d4597a43b6489c24a386633, type: 3}
+  m_PrefabInstance: {fileID: 1116594588}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1116594590 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5450947753894218586, guid: 44795fd45d4597a43b6489c24a386633, type: 3}
@@ -6939,10 +6944,18 @@ PrefabInstance:
     - target: {fileID: 4998548156731996643, guid: 6ce34c54ceb31a74fb75f15d7818134c, type: 3}
       propertyPath: onMenuChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1116594589}
+    - target: {fileID: 4998548156731996643, guid: 6ce34c54ceb31a74fb75f15d7818134c, type: 3}
+      propertyPath: onMenuChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 4998548156731996668, guid: 6ce34c54ceb31a74fb75f15d7818134c, type: 3}
       propertyPath: onMenuChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1116594589}
+    - target: {fileID: 4998548156731996668, guid: 6ce34c54ceb31a74fb75f15d7818134c, type: 3}
+      propertyPath: onMenuChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 4998548156731996670, guid: 6ce34c54ceb31a74fb75f15d7818134c, type: 3}
       propertyPath: pausedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
