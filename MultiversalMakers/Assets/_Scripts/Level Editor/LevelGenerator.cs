@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using static MultiversalMakers.LevelGenerator.ObjectData;
+using static UnityEditor.PlayerSettings;
 
 namespace MultiversalMakers
 {
@@ -332,16 +333,25 @@ namespace MultiversalMakers
         }
         void GenerateGatesAndKeys(Vector3Int _position, Varient _obj)
         {
+
+            Vector3Int checkPos(Vector3Int pos, int x, int y)
+            {
+                return new Vector3Int(pos.x + x, pos.y + y, pos.z);
+            }
+
+            Vector3 newPos = _position + new Vector3(0.5f, 0.5f);
+
+
             if (_obj.name == "Gate 1" || _obj.name == "Key 1")
             {
                 if(GateAndKey1 == null)
                     GateAndKey1 = Instantiate(_obj.summonObject, Vector3.zero, Quaternion.identity, transform);
 
                 if (_obj.name == "Key 1")
-                    GateAndKey1.transform.GetChild(0).transform.position = _position;
+                    GateAndKey1.transform.GetChild(0).transform.position = newPos;
 
                 if (_obj.name == "Gate 1")
-                    GateAndKey1.transform.GetChild(1).transform.position = _position;
+                    GateAndKey1.transform.GetChild(1).transform.position = newPos;
             }
 
             if (_obj.name == "Gate 2" || _obj.name == "Key 2")
@@ -350,10 +360,10 @@ namespace MultiversalMakers
                     GateAndKey2 = Instantiate(_obj.summonObject, Vector3.zero, Quaternion.identity, transform);
 
                 if (_obj.name == "Key 2")
-                    GateAndKey2.transform.GetChild(0).transform.position = _position;
+                    GateAndKey2.transform.GetChild(0).transform.position = newPos;
 
                 if (_obj.name == "Gate 2")
-                    GateAndKey2.transform.GetChild(1).transform.position = _position;
+                    GateAndKey2.transform.GetChild(1).transform.position = newPos;
             }
 
             if (_obj.name == "Gate 3" || _obj.name == "Key 3")
@@ -362,10 +372,10 @@ namespace MultiversalMakers
                     GateAndKey3 = Instantiate(_obj.summonObject, Vector3.zero, Quaternion.identity, transform);
 
                 if (_obj.name == "Key 3")
-                    GateAndKey3.transform.GetChild(0).transform.position = _position;
+                    GateAndKey3.transform.GetChild(0).transform.position = newPos;
 
                 if (_obj.name == "Gate 3")
-                    GateAndKey3.transform.GetChild(1).transform.position = _position;
+                    GateAndKey3.transform.GetChild(1).transform.position = newPos;
             }
 
         }
