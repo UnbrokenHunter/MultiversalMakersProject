@@ -192,6 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filledStar: {fileID: 21300000, guid: a669840b2c2f8d740a99f54422d4f7dd, type: 3}
   animationTime: 0.01
+  menu: 0
 --- !u!1 &1957790726142879452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,7 +1058,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  canvas: {fileID: 8084758068999948671}
 --- !u!114 &6525717246098084499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3297,6 +3297,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7750167078432344164}
+        m_TargetAssemblyTypeName: MultiversalMakers.SetTimescale, Assembly-CSharp
+        m_MethodName: SetScaleOnManager
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8575435093580600048}
         m_TargetAssemblyTypeName: MultiversalMakers.ChangeScene, Assembly-CSharp
         m_MethodName: LoadScene
