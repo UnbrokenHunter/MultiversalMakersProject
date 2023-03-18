@@ -7,10 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SineMove
-  m_Shader: {fileID: 4800000, guid: 61975e579c0c5b6458ad03dae205bad0, type: 3}
+  m_Name: Rockety Ship
+  m_Shader: {fileID: 4800000, guid: 15337b42027a4714aa61b63f9e98adf4, type: 3}
   m_ValidKeywords:
   - _ENABLESINEMOVE_ON
+  - _ENABLESINEROTATE_ON
+  - _ENABLEVIBRATE_ON
   - _SHADERSPACE_UV
   - _TIMESETTINGS_LINEAR_DEFAULT
   - _UBERFADING_NONE
@@ -41,6 +43,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -92,6 +98,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - PixelSnap: 0
@@ -102,6 +120,7 @@ Material:
     - _AddHueFade: 1
     - _AddHueSaturation: 1
     - _AddHueSpeed: 1
+    - _AlphaCutoff: 0.5
     - _AlphaTintFade: 1
     - _AlphaTintMinAlpha: 0.05
     - _AlphaTintPower: 1
@@ -187,7 +206,7 @@ Material:
     - _EnableShine: 0
     - _EnableSineGlow: 0
     - _EnableSineMove: 1
-    - _EnableSineRotate: 0
+    - _EnableSineRotate: 1
     - _EnableSmoke: 0
     - _EnableSourceAlphaDissolve: 0
     - _EnableSourceGlowDissolve: 0
@@ -199,7 +218,7 @@ Material:
     - _EnableUVRotate: 0
     - _EnableUVScale: 0
     - _EnableUVScroll: 0
-    - _EnableVibrate: 0
+    - _EnableVibrate: 1
     - _EnableWind: 0
     - _FlameBrightness: 10
     - _FlameNoiseFactor: 2.5
@@ -221,21 +240,21 @@ Material:
     - _GlitchBrightness: 4
     - _GlitchFade: 1
     - _GlitchHueSpeed: 1
-    - _GlitchMaskMin: 0.4
+    - _GlitchMaskMin: 0.375
     - _HalftoneFade: 1
     - _HalftoneFadeWidth: 1.5
     - _HalftoneInvert: 0
     - _HalftoneTiling: 4
     - _HologramContrast: 1
-    - _HologramDistortionDensity: 0.5
-    - _HologramDistortionOffset: 0.5
-    - _HologramDistortionScale: 10
+    - _HologramDistortionDensity: 0.6
+    - _HologramDistortionOffset: 0
+    - _HologramDistortionScale: 1
     - _HologramDistortionSpeed: 2
     - _HologramFade: 1
-    - _HologramLineFrequency: 500
-    - _HologramLineGap: 3
+    - _HologramLineFrequency: 280.9
+    - _HologramLineGap: 0
     - _HologramLineSpeed: 0.01
-    - _HologramMinAlpha: 0.2
+    - _HologramMinAlpha: 0.65
     - _Hue: 0
     - _InkSpreadContrast: 2
     - _InkSpreadDistance: 3
@@ -249,6 +268,7 @@ Material:
     - _MetalFade: 1
     - _MetalHighlightContrast: 2
     - _MetalHighlightDensity: 1
+    - _NormalIntensity: 1
     - _OuterOutlineDistortionToggle: 0
     - _OuterOutlineFade: 1
     - _OuterOutlineWidth: 0.04
@@ -288,9 +308,9 @@ Material:
     - _SineGlowFrequency: 4
     - _SineGlowMax: 1
     - _SineGlowMin: 0
-    - _SineMoveFade: 1
+    - _SineMoveFade: 0.849
     - _SineRotateAngle: 15
-    - _SineRotateFade: 1
+    - _SineRotateFade: 0.365
     - _SineRotateFrequency: 1
     - _SmokeAlpha: 1
     - _SmokeDarkEdge: 1
@@ -324,15 +344,15 @@ Material:
     - _TimeScale: 1
     - _TimeSettings: 0
     - _TimeValue: 0
-    - _UVDistortFade: 1
+    - _UVDistortFade: 0.087
     - _UVRotateSpeed: 1
     - _UberFading: 0
     - _UberNoiseFactor: 0.2
     - _UberWidth: 0.3
-    - _VibrateFade: 1
-    - _VibrateFrequency: 100
-    - _VibrateOffset: 0.04
-    - _VibrateRotation: 4
+    - _VibrateFade: 0.18
+    - _VibrateFrequency: 0.05
+    - _VibrateOffset: 0.7
+    - _VibrateRotation: 5.11
     - _WindFlip: 0
     - _WindIsParallax: 0
     - _WindMaxRotation: 2
@@ -370,6 +390,7 @@ Material:
     - _DirectionalDistortionNoiseScale: {r: 0.4, g: 0.4, b: 0, a: 0}
     - _DirectionalGlowFadeEdgeColor: {r: 11.98431, g: 0.6901961, b: 0.6901961, a: 0}
     - _DirectionalGlowFadeNoiseScale: {r: 0.4, g: 0.4, b: 0, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _FlameNoiseScale: {r: 1.2, g: 0.8, b: 0, a: 0}
     - _FlameSpeed: {r: 0, g: -0.5, b: 0, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
@@ -390,9 +411,9 @@ Material:
     - _GlitchDistortion: {r: 0.1, g: 0, b: 0, a: 0}
     - _GlitchDistortionScale: {r: 0, g: 3, b: 0, a: 0}
     - _GlitchDistortionSpeed: {r: 0, g: 1, b: 0, a: 0}
-    - _GlitchMaskScale: {r: 0, g: 0.2, b: 0, a: 0}
+    - _GlitchMaskScale: {r: 0, g: -1.12, b: 0, a: 0}
     - _GlitchMaskSpeed: {r: 0, g: 4, b: 0, a: 0}
-    - _GlitchNoiseScale: {r: 0, g: 3, b: 0, a: 0}
+    - _GlitchNoiseScale: {r: 0, g: 0.34, b: 0, a: 0}
     - _GlitchNoiseSpeed: {r: 0, g: 1, b: 0, a: 0}
     - _HalftonePosition: {r: 0, g: 0, b: 0, a: 0}
     - _HologramTint: {r: 0.3137255, g: 1.662745, b: 2.996078, a: 1}
@@ -428,7 +449,7 @@ Material:
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShineColor: {r: 11.98431, g: 11.98431, b: 11.98431, a: 0}
     - _SineGlowColor: {r: 0, g: 2.007843, b: 2.996078, a: 0}
-    - _SineMoveFrequency: {r: 1, g: 3, b: 0, a: 0}
+    - _SineMoveFrequency: {r: 1, g: 1.12, b: 0, a: 0}
     - _SineMoveOffset: {r: 0, g: 0.3, b: 0, a: 0}
     - _SineRotatePivot: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _SourceAlphaDissolveNoiseScale: {r: 0.3, g: 0.3, b: 0, a: 0}
