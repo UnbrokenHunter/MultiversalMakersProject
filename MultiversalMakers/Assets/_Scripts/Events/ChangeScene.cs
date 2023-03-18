@@ -7,6 +7,8 @@ namespace MultiversalMakers
     {
         public void LoadScene(string sceneName) => LevelManager.Instance.LoadScene(sceneName);
 
+        public void LoadScene(int buildIndex) => LevelManager.Instance.LoadScene(buildIndex);
+
         public void LoadSceneAsync(string sceneName) => LevelManager.Instance.LoadSceneAsync(sceneName);
 
         public void LoadNextScene() => LevelManager.Instance.LoadNextScene();

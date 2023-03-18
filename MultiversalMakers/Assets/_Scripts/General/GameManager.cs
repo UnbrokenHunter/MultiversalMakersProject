@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace MultiversalMakers
 {
@@ -75,6 +76,11 @@ namespace MultiversalMakers
 
         private int starCount = 1;
         public int StarCount { get => starCount; }
+
+        public void AddStarToMemory()
+        {
+            StarTracker.Instance.SetLevel(SceneManager.GetActiveScene().buildIndex, StarCount);
+        }
 
         public void AddStar()
         {

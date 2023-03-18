@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7523064174626896224}
   - component: {fileID: 8552867791677556519}
   - component: {fileID: 747727081616669392}
+  - component: {fileID: 5130045386895293962}
+  - component: {fileID: 4259380672936279103}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -244,6 +246,32 @@ MonoBehaviour:
         RemapIntensityZero: 0
         RemapIntensityOne: 1
         RelativeIntensity: 0
+--- !u!114 &5130045386895293962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855491183588358762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef389b514c0bdf54a90bb6ea0d014a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starTracker: 0000000000000000000000000000000000000000000000000000000000000000
+--- !u!114 &4259380672936279103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855491183588358762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652917c877407484483fb4905a933c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultTimescale: 1
 --- !u!1 &1052310193285699303
 GameObject:
   m_ObjectHideFlags: 0

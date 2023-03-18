@@ -9,6 +9,10 @@ namespace MultiversalMakers
         [SerializeField] private Sprite filledStar;
         [SerializeField] private float animationTime = 0.05f;
 
+        [Space]
+
+        [SerializeField] private bool menu = false;
+
         private void OnEnable() => StartCoroutine(SetLevelStars());
 
         [Button]
@@ -18,7 +22,14 @@ namespace MultiversalMakers
 
             ChangeImage[] _starImages = GetComponentsInChildren<ChangeImage>();
 
-            for (int i = 0; i < GameManager.Instance.StarCount; i++)
+            print(transform.parent.GetSiblingIndex());
+            int forCount = 0;
+            if (menu)
+                forCount = StarTracker.Instance.GetLevelCount(transform.parent.GetSiblingIndex());
+
+            else try { forCount = GameManager.Instance.StarCount; } catch { }
+
+            for (int i = 0; i < forCount; i++)
             {
                 if (_starImages.Length <= i) yield break;
 

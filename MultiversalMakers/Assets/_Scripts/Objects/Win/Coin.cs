@@ -12,6 +12,7 @@ namespace MultiversalMakers
         private void OnTriggerEnter2D(Collider2D collision)
         {
             coinEvent?.Invoke();
+            GameManager.Instance.AddStarToMemory();
         }
 
     }
