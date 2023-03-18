@@ -321,10 +321,10 @@ namespace MultiversalMakers
                 {
                     ""name"": """",
                     ""id"": ""17361402-865a-4904-9edb-6dc2fb3ec49c"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Settings"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

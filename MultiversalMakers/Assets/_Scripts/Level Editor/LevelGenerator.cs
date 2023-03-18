@@ -333,11 +333,6 @@ namespace MultiversalMakers
         void GenerateGatesAndKeys(Vector3Int _position, Varient _obj)
         {
 
-            Vector3Int checkPos(Vector3Int pos, int x, int y)
-            {
-                return new Vector3Int(pos.x + x, pos.y + y, pos.z);
-            }
-
             Vector3 newPos = _position + new Vector3(0.5f, 0.5f);
 
 
