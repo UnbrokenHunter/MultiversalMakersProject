@@ -253,7 +253,7 @@ Material:
     - _OuterOutlineFade: 1
     - _OuterOutlineWidth: 0.04
     - _PixelateFade: 1
-    - _PixelatePixelDensity: 16
+    - _PixelatePixelDensity: 268.74
     - _PixelsPerUnit: 100
     - _PoisonDensity: 3
     - _PoisonFade: 1

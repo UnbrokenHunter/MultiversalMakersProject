@@ -84,8 +84,6 @@ namespace MultiversalMakers {
         [SerializeField] private float _wallHitAnimTime = 0.167f;
         [SerializeField] private ParticleSystem _wallSlideParticles;
         [SerializeField] private string _wallClimbClips;
-        [SerializeField] private float _maxWallSlideVolume = 0.2f;
-        [SerializeField] private float _wallSlideVolumeSpeed = 0.6f;
         [SerializeField] private float _wallSlideParticleOffset = 0.3f;
 
         private bool _hitWall, _isOnWall, _isSliding, _dismountedWall;
