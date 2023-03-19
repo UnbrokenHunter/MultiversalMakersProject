@@ -2235,7 +2235,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 133.05
+  m_fontSize: 133.15
   m_fontSizeBase: 108
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10092,9 +10092,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5450947754994632200, guid: 0d99abf65e379d749a51c36016160650, type: 3}
+      propertyPath: onMenuChangeEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450947754994632200, guid: 0d99abf65e379d749a51c36016160650, type: 3}
+      propertyPath: onMenuChangeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450947754994632200, guid: 0d99abf65e379d749a51c36016160650, type: 3}
       propertyPath: onMenuChangeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1525644269}
+    - target: {fileID: 5450947754994632200, guid: 0d99abf65e379d749a51c36016160650, type: 3}
+      propertyPath: onMenuChangeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450947754994632200, guid: 0d99abf65e379d749a51c36016160650, type: 3}
+      propertyPath: onMenuChangeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450947754994632200, guid: 0d99abf65e379d749a51c36016160650, type: 3}
+      propertyPath: onMenuChangeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450947754994632200, guid: 0d99abf65e379d749a51c36016160650, type: 3}
+      propertyPath: onMenuChangeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450947754994632200, guid: 0d99abf65e379d749a51c36016160650, type: 3}
+      propertyPath: onMenuChangeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5450947755285203574, guid: 0d99abf65e379d749a51c36016160650, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
