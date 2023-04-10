@@ -2,4 +2,4 @@
  Project
 
 Playable at: 
-https://unbrokenhunter.github.io/2DInfiniteRunner/InfiniteRunner/Builds/WebGL/
+https://unbrokenhunter.github.io/MultiversalMakersProject/MultiversalMakers/Builds/WebGL/index.html
